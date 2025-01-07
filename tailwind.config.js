@@ -72,7 +72,45 @@ module.exports = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+		fontFamily: {
+			'body-S': ['Pretendard-Regular', 'sans-serif'],
+			'body-M': ['Pretendard-Regular', 'sans-serif'],
+			'body-L': ['Pretendard-Regular', 'sans-serif'],
+			'title-XS': ['Pretendard-Bold', 'sans-serif'],
+			'title-S': ['Pretendard-Bold', 'sans-serif'],
+			'title-M': ['Pretendard-Bold', 'sans-serif'],
+			'title-L': ['Pretendard-Bold', 'sans-serif'],
+			'heading-S': ['Pretendard-Bold', 'sans-serif'],
+			'heading-M': ['Pretendard-Bold', 'sans-serif'],
+			'heading-L': ['Pretendard-Bold', 'sans-serif'],
+		},
+		fontSize: {
+			'body-S': '12px',
+			'body-M': '14px',
+			'body-L': '16px',
+			'title-XS': '16px',
+			'title-S': '20px',
+			'title-M': '24px',
+			'title-L': '28px',
+			'heading-S': '32px',
+			'heading-M': '36px',
+			'heading-L': '40px',
+		},
+		colors: {
+			'bc-blue': '#3348CB',
+			'bc-orange-1': '#F6922E',
+			'bc-orange-2': '#E87D12',
+			'bc-white': '#F8F8F8',
+			'bc-grey-1': '#B2B1B1',
+			'bc-grey-2': '#828282',
+			'bc-grey-3': '#242323',
+			'bc-black': '#000000',
+			'bc-white45': 'rgba(248, 248, 248, 0.45)',
+			'bc-white25': 'rgba(248, 248, 248, 0.25)',
+			'bc-strokeGrey': 'rgba(248, 248, 248, 0.60)',
+			'bc-lineGrey': '#39393C',
+		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
