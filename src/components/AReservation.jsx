@@ -9,31 +9,48 @@ const AReservation = () => {
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
-    }, 1000); // 1초 뒤 원래 상태로 변경
+    }, 1000);
+  };
+
+  const handleMainPage = () => {
+    navigate('/main');
   };
 
   return (
     <div className="w-full min-h-screen bg-bc-black text-bc-white flex items-center justify-center">
-      <div className="w-[320px] h-full bg-bc-black text-bc-white grid grid-rows-[auto,1fr,auto]">
-        {/* Header */}
-        <header className="flex justify-between items-center p-4">
-          <button onClick={() => navigate(-1)} className="text-bc-white bg-transparent">
-            <img src="assets/LeftArrow.png" alt="arrow-left" className="w-4 h-6 ml-4 mt-2" />
-          </button>
-        </header>
+      <div className="w-full h-full flex flex-col bg-bc-black">
+        {/* Header Container */}
+        <div className="fixed top-0 w-full max-w-[320px] bg-bc-black">
+          <header className="w-full h-[10vh] flex items-center px-4">
+            <button 
+              onClick={handleMainPage} 
+              className="text-bc-white bg-transparent"
+            >
+              <img 
+                src="assets/LeftArrow.png" 
+                alt="arrow-left" 
+                className="w-5 h-7"
+              />
+            </button>
+          </header>
+        </div>
 
         {/* Main */}
-        <main className="flex flex-col items-center justify-center">
+        <main className="flex-1 flex flex-col justify-between py-[2vh] px-4 mb-[8vh] mt-[10vh] gap-[3vh]">
           <div className="text-center flex items-center flex-col">
-            <img src="assets/ARLOGO.svg" alt="Un:Retired Logo" className="mb-4 w-35 h-35" />
+            <img src="assets/ARLOGO.svg" alt="Un:Retired Logo" className="w-[35vw] max-w-[140px] mb-4" />
             <p className="mt-2 text-body-L text-bc-white font-bold">
               50+ 강연/강의 지식생태계 선순환 플랫폼
             </p>
           </div>
-          <div className="flex">
-            <img src="assets/AR_PhoneImage.svg" alt="Phone 1" className="w-46" />
+          <div className="flex justify-center">
+            <img 
+              src="assets/AR_PhoneImage.svg" 
+              alt="Phone 1" 
+              className="w-[90%] max-w-[300px] rotate-[15deg]" 
+            />
           </div>
-          <div className="mt-8 text-center">
+          <div className="text-center">
             <p className="text-title-S">지금 사전예약하면</p>
             <p className="text-bc-orange-1 text-title-S">콘텐츠 20% 할인 쿠폰</p>
             <p className="text-title-S">놓치지 마세요!</p>
@@ -43,7 +60,7 @@ const AReservation = () => {
         </main>
 
         {/* Footer */}
-        <footer className="p-4">
+        <footer className="fixed bottom-0 w-full h-[9vh] bg-bc-black p-4 px-[6vh]">
           <button
             className={`w-full py-2 rounded transition-colors duration-500 ${
               isClicked ? 'bg-[#AA6118]' : 'bg-bc-orange-1'
