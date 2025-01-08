@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const AReservation = () => {
   const navigate = useNavigate();
@@ -9,6 +9,7 @@ const AReservation = () => {
     setIsClicked(true);
     setTimeout(() => {
       setIsClicked(false);
+      window.open('https://docs.google.com/forms/d/e/1FAIpQLSdGW6-evzLYj5R-S860Rfxgd-LLNwRZV1FwY40dE0uEx4ELqg/viewform?usp=header', '_blank');
     }, 1000);
   };
 
@@ -36,7 +37,7 @@ const AReservation = () => {
         </div>
 
         {/* Main */}
-        <main className="flex-1 flex flex-col justify-between py-[2vh] px-4 mb-[8vh] mt-[10vh] gap-[3vh]">
+        <main className="flex-1 flex flex-col justify-between py-[2vh] px-4 mb-[8vh] mt-[10vh] gap-[3vh] animate-fadeInUp">
           <div className="text-center flex items-center flex-col">
             <img src="assets/ARLOGO.svg" alt="Un:Retired Logo" className="w-[35vw] max-w-[140px] mb-4" />
             <p className="mt-2 text-body-L text-bc-white font-bold">
@@ -60,15 +61,16 @@ const AReservation = () => {
         </main>
 
         {/* Footer */}
-        <footer className="fixed bottom-0 w-full h-[9vh] bg-bc-black p-4 px-[6vh]">
-          <button
-            className={`w-full py-2 rounded transition-colors duration-500 ${
-              isClicked ? 'bg-[#AA6118]' : 'bg-bc-orange-1'
-            } text-bc-white`}
+        <footer className="fixed bottom-0 w-full h-[9vh] bg-bc-black p-4 px-[6vh] opacity-0 animate-slideUp">
+            <button
+              className={`w-full py-2 rounded transition-colors duration-500 ${
+                isClicked ? 'bg-[#AA6118]' : 'bg-bc-orange-1'
+              } text-bc-white`}
             onClick={handleClick}
           >
             사전예약하기
           </button>
+          
         </footer>
       </div>
     </div>

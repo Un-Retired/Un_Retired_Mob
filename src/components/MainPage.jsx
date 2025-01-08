@@ -12,13 +12,55 @@ const MainPage = () => {
       id: 1,
       image: "assets/kwon.svg",
       category: "인사·교육",
+      category2: "호텔리어",
       icon: "assets/hat.svg",
+      icon2: "assets/bed.svg",
+      title: "47년 호텔경력",
+      description: "웨스틴 조선 호텔,\n권문현 지배인이 들려주는 호텔서비스의 \n모든 것.",
+      detailedImage: "assets/detailed_kwon.svg",
+      chaptertime: "챕터 2개·0시간 30분",
+      instructor: {
+        name: "권문현",
+        role: "호텔 지배인",
+        profile: "assets/avatar_kwon.svg"
+      },
+      introduction: "안녕하세요.\n웨스틴 조선호텔 서울 지배인 권문현입니다.\n47년 호텔생활을 하며 쌓아온 호텔 서비스의 마음가짐과\n필요한 역량을 포함한 모든 것을 호텔리어를 꿈꾸는\n젋은 세대들에게 핵심만을 담아 전달하려 합니다.",
+      curriculum: [
+        {
+          title: "1. 호텔리어의 시작",
+          description: "47년 전 호텔리어를 꿈꾸게 된 계기"
+        },
+        {
+          title: "2. 서비스의 진정한 의미",
+          description: "고객 서비스의 핵심 가치와 철학"
+        }
+      ]
     },
     {
       id: 2,
       image: "assets/lee.svg",
       category: "인문학·교양",
       icon: "assets/book.svg",
+      title: "25년 은퇴설계",
+      description: "은퇴설계 25년 경력의 베테랑, \n이기훈 강사가 들려주는 직장이 아닌 직업\n만드는법",
+      detailedImage: "assets/detailed_lee.svg",
+      chaptertime: "챕터 6개·0시간 30분",
+      instructor: {
+        name: "이상철",
+        role: "작가",
+        profile: "assets/profile_lee.svg"
+      },
+      introduction: "직장과 직업에 대한 새로운 시각을 제시합니다.",
+      curriculum: [
+        {
+          title: "1. 직장인의 도전",
+          description: "새로운 시작을 위한 첫걸음"
+        },
+        {
+          title: "2. 변화하는 직업 세계",
+          description: "미래 직업의 트렌드와 전망"
+        }
+      ]
     },
     {
       id: 3,
@@ -70,6 +112,12 @@ const MainPage = () => {
     }
   };
 
+  const handleCourseClick = (course) => {
+    if (!course.isPreReservation) {
+      navigate('/detail', { state: { courseData: course } });
+    }
+  };
+
   return (
     <div className="w-auto h-auto bg-bc-black text-bc-white overflow-hidden pb-[60px] relative min-h-screen">
       <header className="w-full h-[60px] flex items-center justify-between px-6">
@@ -117,7 +165,13 @@ const MainPage = () => {
               }}
             >
               {recommendedCourses.map((course, index) => (
-                <div key={course.id} className="min-w-[55%] min-h-[350] flex-shrink-0 wider:min-w-[67%] wider:min-h-[350px] relative">
+                <div 
+                  key={course.id} 
+                  className="min-w-[55%] min-h-[350] flex-shrink-0 wider:min-w-[67%] wider:min-h-[350px] relative"
+                  onClick={() => handleCourseClick(course)}
+                  role="button"
+                  tabIndex={0}
+                >
                   <div className={`absolute inset-0 z-10 transition-opacity duration-300 ${
                     currentIndex === index ? 'opacity-0' : 'bg-black/50'
                   }`} />
