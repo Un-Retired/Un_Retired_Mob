@@ -4,6 +4,17 @@
       "paths": {
         "@/*": ["./src/*"]
       }
+    },
+    "typeAcquisition": {
+      "include": [
+        "@babel/core",
+        "@babel/generator",
+        "@babel/template",
+        "@babel/traverse",
+        "cookie",
+        "estree",
+        "json-schema"
+      ]
     }
-  }
+}
   

@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes } from 'react-router-dom'
 import AReservation from './components/AReservation'
 import MainPage from './components/MainPage'
 import DetailedView from './components/DetailedView'
@@ -6,7 +6,7 @@ import DetailedView from './components/DetailedView'
 function App() {
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <Routes>
         <Route path="/" element={<AReservation />} />
         <Route path="/main" element={<MainPage />} />
