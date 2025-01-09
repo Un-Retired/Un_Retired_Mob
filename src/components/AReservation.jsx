@@ -15,7 +15,7 @@ const AReservation = () => {
         {/* Header Container */}
         <div className="fixed top-0 w-full max-w-[320px] bg-bc-black">
           <header className="w-full h-[7vh] flex items-center px-4">
-            {/* <button 
+            <button 
               onClick={handleMainPage} 
               className="text-bc-white bg-transparent"
             >
@@ -24,7 +24,7 @@ const AReservation = () => {
                 alt="arrow-left" 
                 className="w-5 h-7"
               />
-            </button> */}
+            </button>
           </header>
         </div>
 

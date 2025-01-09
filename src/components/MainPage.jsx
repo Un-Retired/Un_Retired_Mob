@@ -5,7 +5,7 @@ const MainPage = () => {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentIndexCurrent, setCurrentIndexCurrent] = useState(0);
-  const [touchStart, setTouchStart] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
 
   const recommendedCourses = [
     {
@@ -27,13 +27,30 @@ const MainPage = () => {
       introduction: "안녕하세요.\n웨스틴 조선호텔 서울 지배인 권문현입니다.\n47년 호텔생활을 하며 쌓아온 호텔 서비스의 마음가짐과\n필요한 역량을 포함한 모든 것을 호텔리어를 꿈꾸는\n젋은 세대들에게 핵심만을 담아 전달하려 합니다.",
       curriculum: [
         {
-          title: "1. 호텔리어의 시작",
-          description: "47년 전 호텔리어를 꿈꾸게 된 계기"
+          title: "1",
+          description: "권문현 지배인이 들려주는 호텔서비스의 모든 것"
         },
-        {
-          title: "2. 서비스의 진정한 의미",
-          description: "고객 서비스의 핵심 가치와 철학"
-        }
+      ],
+      introImages: [
+        "assets/intro1.png",
+        "assets/detailed_intro_kwon1.png",
+        "assets/intro2.png",
+        "assets/detailed_intro_kwon2.png"
+      ],
+      introReason: "안녕하세요. 웨스틴 조선호텔 서울 지배인 권문현입니다. \n47년 호텔생활을 하며 쌓아온 호텔 서비스의 마음가짐과\n필요한 역량을 포함한 모든 것을 호텔리어를 꿈꾸는\n젊은 세대들에게 핵심만을 담아 전달하려 합니다.",
+      introBenefit: "• 호텔리어에게 기본이 되는 고객응대방법\n• 호텔리어가 가져야 하는 목표와 행동방식\n• 47년 노하우의 고객감동서비스 제공법\n• 장기 근속을 할 수 있었던 권문현 지배인만의 노하우",
+      curriculumProlog: "47년 호텔리어의 시작 이야기: 서비스의 본질을 찾아서",
+      career: [
+        "글래드 서울호텔 지배인 (10년 근무)",
+        "웨스틴 조선호텔 지배인 (36년 근무)",
+        "서강대 호텔 MBA 과정 수료",
+        "신문, 잡지, 방송 다수 출연"
+      ],
+      achievements: [
+        "웨스틴 조선호텔 모범사원 3회 수상",
+        "웨스틴 조선호텔 장기근속상 수상",
+        "콘래드 서울호텔 총지배인상 수상",
+        "감사패 다수 수상"
       ]
     },
     {
@@ -47,19 +64,50 @@ const MainPage = () => {
       chaptertime: "챕터 6개·0시간 30분",
       instructor: {
         name: "이상철",
-        role: "작가",
-        profile: "assets/profile_lee.svg"
+        role: "경영 컨설턴트",
+        profile: "assets/avatar_lee.png"
       },
       introduction: "직장과 직업에 대한 새로운 시각을 제시합니다.",
       curriculum: [
         {
-          title: "1. 직장인의 도전",
-          description: "새로운 시작을 위한 첫걸음"
+          title: "1",
+          description: "1. 당신의 경력을 디자인하라."
         },
         {
-          title: "2. 변화하는 직업 세계",
-          description: "미래 직업의 트렌드와 전망"
-        }
+          title: "2",
+          description: "2. 직장인의 메멘토모리."
+        },
+        {
+          title: "3",
+          description: "3. 멧돼지와 집돼지."
+        },
+        {
+          title: "4",
+          description: "4. 직장과 직업을 디자인하라."
+        },
+        {
+          title: "5",
+          description: "5. 평생 자신을 고용하라."
+        },
+      ],
+      introImages: [
+        "assets/intro1.png",
+        "assets/detailed_intro_lee1.png",
+        "assets/intro2.png",
+        "assets/detailed_intro_lee2.png"
+      ],
+      introReason: "백세시대에 평균 근속 14~15년의 짧은 직장 생활과 40대\n중반 강제 퇴직이라는 위기를 해결하기 위해 기획되었습니다. 또한,\n주된 직장에서 평생직업을 만들 수 있는 노하우를\n제시하여,지속 가능한 경력 관리 방법을 제공합니다.",
+      introBenefit: "• 직장에서 성공한 사람들의 성공포인트 벤치마킹\n• 평생직업을 창출할 수 있는 경력관리(CDP)노하우\n• 3단계에서 다단계로 변하는 경력관리의 스킬\n• 퇴직 후 30년을 준비할 수 있는 절정의 고수가 되는 방법",
+      curriculumProlog: "강의현장에서 함꼐한 직장인들의 직장, 퇴직 후의 이야기",
+      career: [
+        "연세대 EMBA 과정 수료.",
+        "30년 삼성그룹,현대그룹,LG그룹 등 1000개 기업 강의 경영컨설팅 및 다수 대학 강의.",
+        "인간관계/리더십/경력관리(CDP)/생애설계/은퇴,퇴직관리 컨설팅 전문가.",
+      ],
+      achievements: [
+        "NCS 자기개발능력 공저",
+        "행복한 은퇴를 위한 생애설계 공저",
+        "퇴직과 은퇴사이 출간",
       ]
     },
     {
@@ -87,25 +135,31 @@ const MainPage = () => {
   ];
 
   const handleTouchStart = (e, isCurrentCourse = false) => {
-    setTouchStart(e.touches[0].clientX);
+    const touch = e.touches[0];
+    setTouchStart({
+      x: touch.clientX,
+      y: touch.clientY
+    });
   };
 
   const handleTouchEnd = (e, isCurrentCourse = false) => {
-    const touchEnd = e.changedTouches[0].clientX;
-    const touchDiff = touchStart - touchEnd;
-    const minSwipeDistance = 50;
-
-    if (Math.abs(touchDiff) > minSwipeDistance) {
+    if (!touchStart) return;
+    
+    const touch = e.changedTouches[0];
+    const deltaX = touchStart.x - touch.clientX;
+    const deltaY = touchStart.y - touch.clientY;
+    
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
       if (isCurrentCourse) {
-        if (touchDiff > 0 && currentIndexCurrent < currentCourses.length - 1) {
+        if (deltaX > 0 && currentIndexCurrent < currentCourses.length - 1) {
           setCurrentIndexCurrent(prev => prev + 1);
-        } else if (touchDiff < 0 && currentIndexCurrent > 0) {
+        } else if (deltaX < 0 && currentIndexCurrent > 0) {
           setCurrentIndexCurrent(prev => prev - 1);
         }
       } else {
-        if (touchDiff > 0 && currentIndex < recommendedCourses.length - 1) {
+        if (deltaX > 0 && currentIndex < recommendedCourses.length - 1) {
           setCurrentIndex(prev => prev + 1);
-        } else if (touchDiff < 0 && currentIndex > 0) {
+        } else if (deltaX < 0 && currentIndex > 0) {
           setCurrentIndex(prev => prev - 1);
         }
       }
@@ -151,8 +205,15 @@ const MainPage = () => {
         <div className="relative mb-4">
           <div 
             className="overflow-hidden touch-pan-x"
-            onTouchStart={(e) => handleTouchStart(e, false)}
-            onTouchEnd={(e) => handleTouchEnd(e, false)}
+            onTouchStart={(e) => {
+              e.stopPropagation();
+              handleTouchStart(e, false);
+            }}
+            onTouchEnd={(e) => {
+              e.stopPropagation();
+              handleTouchEnd(e, false);
+            }}
+            onTouchMove={(e) => e.stopPropagation()}
           >
             <div 
               className="flex gap-4 transition-transform duration-300 ease-in-out wider:min-h-[400px]"
