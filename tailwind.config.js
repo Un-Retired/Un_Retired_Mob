@@ -6,6 +6,7 @@ module.exports = {
   	extend: {
 		screens: {
 			'wider' : '410px',
+			'max-wider' : '550px',
 		},
   		borderRadius: {
   			lg: 'var(--radius)',
