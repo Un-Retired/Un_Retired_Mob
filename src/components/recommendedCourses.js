@@ -280,13 +280,13 @@ export const recommendedCourses = [
         episodeDescription: "AI소셜미디어 마케팅-데이터 분석과 전략 수립",
         chapters: [
           {
-            key: 1,
+            key: 4,
             title: "1",
             description: "1. AI활용 소셜미디어 분석",
             duration: "15:00",
           },
           {
-            key: 2,
+            key: 5,
             title: "2",
             description: "2. 소셜미디어 분석기반 전략수립",
             duration: "15:00",
