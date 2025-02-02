@@ -8,8 +8,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AReservation />} />
-        <Route path="/main" element={<MainPage />} />
+        {/* <Route path="/" element={<AReservation />} /> */}
+        <Route path="/" element={<MainPage />} />
         <Route path="/detail" element={<DetailedView />} />
       </Routes>
     </Router>

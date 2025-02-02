@@ -10,7 +10,7 @@ const MainPage = () => {
   const recommendedCourses = [
     {
       id: 1,
-      image: "assets/kwon.svg",
+      image: "assets/권문현.png",
       category: "인사·교육",
       category2: "호텔리어",
       icon: "assets/hat.svg",
@@ -27,8 +27,15 @@ const MainPage = () => {
       introduction: "안녕하세요.\n웨스틴 조선호텔 서울 지배인 권문현입니다.\n47년 호텔생활을 하며 쌓아온 호텔 서비스의 마음가짐과\n필요한 역량을 포함한 모든 것을 호텔리어를 꿈꾸는\n젋은 세대들에게 핵심만을 담아 전달하려 합니다.",
       curriculum: [
         {
-          title: "1",
-          description: "권문현 지배인이 들려주는 호텔서비스의 모든 것"
+          episode: "Episode1",
+          episodeDescription: "언어가 아닌 태도가 만든 서비스의 시작",
+          chapters: [
+            {
+              key: 1,
+              title: "1",
+              description: "권문현 지배인이 들려주는 호텔서비스의 모든 것"
+            }
+          ]
         },
       ],
       introImages: [
@@ -39,7 +46,7 @@ const MainPage = () => {
       ],
       introReason: "안녕하세요. 웨스틴 조선호텔 서울 지배인 권문현입니다. \n47년 호텔생활을 하며 쌓아온 호텔 서비스의 마음가짐과\n필요한 역량을 포함한 모든 것을 호텔리어를 꿈꾸는\n젊은 세대들에게 핵심만을 담아 전달하려 합니다.",
       introBenefit: "• 호텔리어에게 기본이 되는 고객응대방법\n• 호텔리어가 가져야 하는 목표와 행동방식\n• 47년 노하우의 고객감동서비스 제공법\n• 장기 근속을 할 수 있었던 권문현 지배인만의 노하우",
-      curriculumProlog: "47년 호텔리어의 시작 이야기: 서비스의 본질을 찾아서",
+      curriculumProlog: "경험이 만든 철학-47년 호텔리어의 조언",
       career: [
         "글래드 서울호텔 지배인 (10년 근무)",
         "웨스틴 조선호텔 지배인 (36년 근무)",
@@ -55,48 +62,65 @@ const MainPage = () => {
     },
     {
       id: 2,
-      image: "assets/lee.svg",
-      category: "인문학·교양",
+      image: "assets/이기훈.png",
+      category: "인사·교육",
       icon: "assets/book.svg",
       title: "25년 은퇴설계",
       description: "은퇴설계 25년 경력의 베테랑, \n이기훈 강사가 들려주는 직장이 아닌 직업\n만드는법",
       detailedImage: "assets/detailed_lee.svg",
-      chaptertime: "챕터 6개·0시간 30분",
+      chaptertime: "챕터 5개·1시간 15분",
       instructor: {
         name: "이상철",
         role: "경영 컨설턴트",
         profile: "assets/avatar_lee.png"
       },
-      introduction: "직장과 직업에 대한 새로운 시각을 제시합니다.",
+      introduction: "안녕하세요.경영 컨설팅 전문가 이기훈입니다. \n 25년 간 약 1000개의 기업을 대상으로 자기경영, 셀프리더십, 경력\n관리(CDP),은퇴•퇴직 설계, 리더십 등 강의 및 경영\n 컨설팅을 수행해왔습니다.25년 노하우를 기반으로 은퇴를\n앞둔 사람들에게 어떤 것을 준비해야 하는지 전달하려합니다.",
       curriculum: [
         {
-          title: "1",
-          description: "1. 당신의 경력을 디자인하라."
+          episode: "Episode1",
+          episodeDescription: "당신의 경력을 디자인하라-1",
+          chapters: [
+            {
+              key: 1,
+              title: "1",
+              description: "1. 당신의 경력을 디자인하라."
+            },
+            {
+              key: 2,
+              title: "2",
+              description: "2. 직장인의 메멘토모리."
+            },
+            {
+              key:3,
+              title:"2",
+              description: "3. 멧돼지와 집돼지"
+            }
+          ]
         },
         {
-          title: "2",
-          description: "2. 직장인의 메멘토모리."
-        },
-        {
-          title: "3",
-          description: "3. 멧돼지와 집돼지."
-        },
-        {
-          title: "4",
-          description: "4. 직장과 직업을 디자인하라."
-        },
-        {
-          title: "5",
-          description: "5. 평생 자신을 고용하라."
+          episode: "Episode2",
+          episodeDescription: "당신의 경력을 디자인하라-2",
+          chapters: [
+            {
+              key: 4,
+              title: "4",
+              description: "4. 직장과 직업을 디자인하라"
+            },
+            {
+              key: 5,
+              title: "5",
+              description: "5. 평생 자신을 고용하라"
+            }
+          ]
         },
       ],
       introImages: [
         "assets/intro1.png",
         "assets/detailed_intro_lee1.png",
-        "assets/intro2.png",
-        "assets/detailed_intro_lee2.png"
+        "assets/detailed_intro_lee2.png",
+        "assets/intro2.png"
       ],
-      introReason: "백세시대에 평균 근속 14~15년의 짧은 직장 생활과 40대\n중반 강제 퇴직이라는 위기를 해결하기 위해 기획되었습니다. 또한,\n주된 직장에서 평생직업을 만들 수 있는 노하우를\n제시하여,지속 가능한 경력 관리 방법을 제공합니다.",
+      introReason: "100시대에 평균 근속 14~15년의 짧은 직장 생활과 40대\n중반 강제 퇴직이라는 위기를 해결하기 위해 기획되었습니다.\n또한, 주된 직장에서 평생직업을 만들 수 있는 노하우를\n제시하여,지속 가능한 경력 관리 방법을 제공합니다.",
       introBenefit: "• 직장에서 성공한 사람들의 성공포인트 벤치마킹\n• 평생직업을 창출할 수 있는 경력관리(CDP)노하우\n• 3단계에서 다단계로 변하는 경력관리의 스킬\n• 퇴직 후 30년을 준비할 수 있는 절정의 고수가 되는 방법",
       curriculumProlog: "강의현장에서 함꼐한 직장인들의 직장, 퇴직 후의 이야기",
       career: [
@@ -112,6 +136,246 @@ const MainPage = () => {
     },
     {
       id: 3,
+      image: "assets/유니초이.png",
+      category: "인문학·교양",
+      icon: "assets/book.svg",
+      title: "20년 에티켓 마스터",
+      description: "우아한 매너로 빛나는 성공의 법칙:20년 경력\n에티켓 마스터가 전하는 실천적 지혜",
+      detailedImage: "assets/detailed_유니초이.png",
+      chaptertime: "챕터 6개·1시간 30분",
+      instructor: {
+        name: "유니초이",
+        role: "에티켓 마스터",
+        profile: "assets/avatar_유니초이.png"
+      },
+      introduction: "안녕하세요.유니 초이(Yooney Choi)입니다.\n영국에서 정통 에티켓 교육을 수학하고 20년 넘게 비지니스 및 소셜\n매너,스타일링 강의를 진행해왔습니다. 국내외 다양한 기관과 기업\n에서 강의하며 실습을 통한 품격 있는 매너와 세련된 태도를 전하는\n데 집중하고 있습니다. 오랜 경험을 바탕으로 개인의 이미지와 커뮤\n니케이션을 개선하는 실용적인 에티켓 코칭을 전달하려 합니다.",
+      curriculum: [
+        
+        {
+          episode: "Episode1",
+          episodeDescription: "품격있는 첫인상-매너,인사,그리고 사교의 기술",
+          chapters: [
+            {
+              key: 1,
+              title: "1",
+              description: "1. 매너와 에티켓 & 인사하기"
+            },
+            {
+              key: 2, 
+              title: "2",
+              description: "2. 악수와 소셜 키싱&슬기로운 사교생활"
+            },
+            {
+              key: 3,
+              title: "3", 
+              description: "3. 드레스 코드"
+            }
+          ]
+        },
+        {
+          episode: "Episode2", 
+          episodeDescription: "우아함의 정수-애프터눈 티 에티켓의 모든 것",
+          chapters: [
+            {
+              key: 4,
+              title: "1",
+              description: "1. 애프터눈 티의 역사와 문화적 배경"
+            },
+            {
+              key: 5,
+              title: "2",
+              description: "2. 애프터눈 티의 메뉴와 에티켓"
+            },
+            {
+              key: 6,
+              title: "3",
+              description: "3. 애프터눈 티의 테이블 매너와 도구 활용"
+            }
+          ]
+        },
+      ],
+      introImages: [
+        "assets/intro_유진초이_1.png",
+        "assets/intro_유진초이_2.png",
+        "assets/intro_유진초이_3.png",
+        "assets/intro_유진초이_4.png"
+      ],
+      introReason: "은퇴 후에도 품격 있는 사회적 이미지를 유지하고 자신감을 갖도록\n돕기 위해 강의를 기획했습니다.또한,다이닝 에티켓과 애프터눈 티\n클래스 등 고급스러운 취미를 통해 중장년층의 자기 계발과 라이프\n스타일 향상을 지원하고자 합니다.",
+      introBenefit: "• 품격 있는 사회적 이미지 구축을 통한 세련 매너 실천법\n• 자신감 향상 및 개인 브랜딩을 통해 본인의 가치 향상\n• 고급스러운 취미와 문화 경험 제공으로 품격있는 라이프 스타일\n• 실용적인 에티켓 코칭으로 일상에서 자연스로운 매너 적용",
+      curriculumProlog: "첫인상이 품격을 만든다-매너와 에티켓의 시작",
+      career: [
+        "에티켓 & 이미지 컨설팅-영국 The Emma Dupont School of Etiquette 수료,예절•이미지메이킹•리더십 지도사 1급 보유.",
+        "슈가크래프트&파티세리-영국 Brooklands College 슈가크래프트 과정 및 Le Cordon Bleu 파티세리 디플로마 취득.",
+        "밀리너리(모자 디자인)-영국 London College of Fashion 밀리너리 프로그램 수료.",
+      ],
+      achievements: [
+        "『The Art of Sugacraft』,『참 쉬운 슈가크래프트』,『설탕으로 빚는 달콤한 놀이』 대표 저자.",
+        "2017년 플랫폼 엘 & 루이가또즈 콜라보 전시 '랑데뷰',2017년 서울 롯데호텔 '레이디스 데이'개최",
+        "영국 The Emma Dupont School of Etiquette,Brooklands College,London College of Fashion 등 수료.",
+      ]
+    },
+    {
+      id: 4,
+      image: "assets/이현구.png",
+      category: "공학·기술",
+      icon: "assets/spinner.svg",
+      title: "30년 마케팅 전문가",
+      description: "30년 마케팅 베테랑의 AI 활용 비법:\n데이터에서 혁신으로",
+      detailedImage: "assets/detailed_이현구.png",
+      chaptertime: "챕터 5개·1시간 15분",
+      instructor: {
+        name: "이현구",
+        role: "AI 마케팅 전문가",
+        profile: "assets/avatar_이현구.png"
+      },
+      introduction: "안녕하세요.이현구입니다.\n저는 AI를 활용한 비지니스 혁신과 데이터 분석을 중심으로 강의와\n컨설팅을 진행하고 있습니다.삼성전자와 삼성자동차에서 전략 기\n획 경험을 바탕으로 현재 AI융합비지니스포럼 회장으로서 AI를 통해\n더 스마트한 미래를 설계할 수 있도록 돕는 데 집중하고 있습니다.",
+      curriculum: [
+        
+        {
+          episode: "Episode1",
+          episodeDescription: "AI마케팅 전략-생성형 AI부터 데이터 활용까지",
+          chapters: [
+            {
+              key: 1,
+              title: "1",
+              description: "1. 생성형 AI와 마케팅의 융합"
+            },
+            {
+              key: 2, 
+              title: "2",
+              description: "2. 데이터 기반 마케팅 전략"
+            },
+            {
+              key: 3,
+              title: "3", 
+              description: "3. AI기반 STP 전략"
+            }
+          ]
+        },
+        {
+          episode: "Episode2", 
+          episodeDescription: "AI소셜미디어 마케팅-데이터 분석과 전략 수립",
+          chapters: [
+            {
+              key: 1,
+              title: "1",
+              description: "1. AI활용 소셜미디어 분석"
+            },
+            {
+              key: 2,
+              title: "2",
+              description: "2. 소셜미디어 분석기반 전략수립"
+            },
+          ]
+        },
+      ],
+      introImages: [
+        "assets/intro_이현구_1.png",
+        "assets/intro_이현구_2.png",
+        "assets/intro_이현구_3.png",
+        "assets/intro_이현구_4.png"
+      ],
+      introReason: "AI는 단순한 기술을 넘어 현대 비지니스의 핵심 도구로 자리 잡았습\n니다.변화하는 시장에서 효율성과 경쟁령을 높이기 위해 기업과 개\n인이 AI를 효과적으로 활용할 수 있는 방법을 배우는 것은 필수적입\n니다. 이 강의는 AI의 본질과 활용 사례를 통해 참가자들이 마케팅 전\n략과 비즈니스 혁신을 실질적으로 연결할 수 있도록 돕고자 기획되\n었습니다.",
+      introBenefit: "• AI의 개념과 비즈니스 적용 방법을 익혀 실무에서의 활용\n• AI 기반 데이터 분석과 자동화 전략으로 마케팅 효과를 극대화\n• 실전 사례와 도구를 활용해 배운 내용을 바로 비즈니스에 적용\n• AI기술과 윤리적 이슈를 다루며 변화하는 시장에 대비",
+      curriculumProlog: "AI가 바꾸는 비지니스,이제는 선택이 아닌 필수",
+      career: [
+        "강남대 산학협력단 교수(PhD)",
+        "AI융합비지니스포럼 회장",
+        "前 삼성전자(무선 전략마케팅,글로벌마케팅)",
+        "前 삼성자동차(전략기획,상품전략)",
+        "前 삼성경제연구소 (컨설팅),기아자동차 (마케팅)",
+      ],
+      achievements: [
+        "경기 스타트업 플랫폼 전문가",
+        "창업진흥원 평가위원",
+        "메가트렌드 ESG•DX•AI연구('24.8월, 공저)",
+        "챗GPT활용의 정석('24.6월,공저)",
+        "ChatGPT AI로 데이터분석 마스터하기('23.5월,공저)"
+      ]
+    },
+    {
+      id: 5,
+      image: "assets/이재원.png",
+      category: "인사·교육",
+      icon: "assets/hat.svg",
+      title: "15년 문화산업 전문가",
+      description: "15년 경력 미디어,문화산업 전문가가 전하는\n세대 간 소통의 실질적인 패러다임",
+      detailedImage: "assets/detailed_이재원.png",
+      chaptertime: "챕터 6개·1시간 30분",
+      instructor: {
+        name: "이재원",
+        role: "문화산업 전문가",
+        profile: "assets/avatar_이재원.png"
+      },
+      introduction: "안녕하세요.이재원입니다.\n저는 미디어와 세대 간 소통을 연구하는 성균관대학교 초빙교수이자\n한양대학교 겸임교수입니다.전 텐아시아 편집장,스포츠한국 부장\n으로 미디어 산업을 분석해왔으며 현재는 Z세대•알파세대(잘파 세\n대)와의 소통 방식과 문화 변화를 연구하고 있습니다.",
+      curriculum: [
+        
+        {
+          episode: "Episode1",
+          episodeDescription: "잘파 세대,그들은 누구인가?",
+          chapters: [
+            {
+              key: 1,
+              title: "1",
+              description: "1. 전서계인과 무한 경쟁하는 잘파 세대"
+            },
+            {
+              key: 2, 
+              title: "2",
+              description: "2. 섬세한 소통이 디폴트인 잘파 세대"
+            },
+            {
+              key: 3,
+              title: "3", 
+              description: "3. 공정에 목마른 잘파 세대"
+            }
+          ]
+        },
+        {
+          episode: "Episode2", 
+          episodeDescription: "잘파세대와 소통하는 법",
+          chapters: [
+            {
+              key: 1,
+              title: "1",
+              description: "1. 원칙은 차갑게,감정은 뜨겁게"
+            },
+            {
+              key: 2,
+              title: "2",
+              description: "2. 소통 주인의 자리를 내어주기"
+            },
+            {
+              key:2,
+              title:"3",
+              decription: "3. 잘파 감수성 착장한 애티튜드 익히기"
+            }
+          ]
+        },
+      ],
+      introImages: [
+        "assets/intro_이재원_1.png",
+        "assets/intro_이재원_2.png",
+        "assets/intro_이재원_3.png",
+        "assets/intro_이재원_4.png"
+      ],
+      introReason: "잘파 세대는 새로운 소통 방식과 가치관을 가진 세대로 기성세대와\n의 간극이 점점 커지고 있습니다. 이 강의는 잘파 세대의 특성을 이\n해하고 효과적으로 소통하는 방법을 배우기 위해 기획되었습니다.\n실질적인 사례와 통계를 통해 세대 간 공감과 존중을 바탕으로 원활\n한 소통을 돕는 것이 목표입니다.",
+      introBenefit: "• 세대 간 차이를 인식하고 그들의 가친관과 소통 방식 이해\n• 잘파 세대와의 원활한 대화를 위한 실직적인 소통 방법 학습\n• 조직 내 세대 차이를 극복하고 효율적인 협업 환경 조성\n• 실습과 사례를 통해 배운 내용을 실제 대인관계와 업무에서 바로 활용",
+      curriculumProlog: "잘파 세대,이해 없이 소통할 수 없다",
+      career: [
+        "성균관대학교 컬쳐앤테크놀러지융합전공 초빙교수 / 한양대학교 실용음악학과 겸임교수",
+        "전 텐아시아 편집장/스포츠한국 부장",
+        "이화여자대학교 언론홍보영상학 박사",
+        "이데일리 문화대상•청룡 시리즈 어워드•더케이 빌보드 차트 심사위원",
+      ],
+      achievements: [
+        "저서 『문화산업 마케팅 전략의 이론과 실제』,『AI와 더불어 살기』등 다수 집필",
+        "잘파 세대(Gen Z+α) 소통 전문가",
+        "KBS<한민족 하나로>,SBS<열린TV 시청자세상>고정 출연",
+      ]
+    },
+    {
+      id: 6,
       isPreReservation: true,
       title: "사전 예약하고 가장 먼저 시청해 보세요!",
       description: "AI활용 / 유아교육 / SDGS / 클래식 인문학 / 일과 세대에 이해하기 등의 콘텐츠가 추가될 예정입니다.",
@@ -144,11 +408,11 @@ const MainPage = () => {
 
   const handleTouchEnd = (e, isCurrentCourse = false) => {
     if (!touchStart) return;
-    
+
     const touch = e.changedTouches[0];
     const deltaX = touchStart.x - touch.clientX;
     const deltaY = touchStart.y - touch.clientY;
-    
+
     if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
       if (isCurrentCourse) {
         if (deltaX > 0 && currentIndexCurrent < currentCourses.length - 1) {
@@ -167,7 +431,9 @@ const MainPage = () => {
   };
 
   const handleCourseClick = (course) => {
-    if (!course.isPreReservation) {
+    if (course.isPreReservation) {
+      window.open('https://docs.google.com/forms/d/e/1FAIpQLSdGW6-evzLYj5R-S860Rfxgd-LLNwRZV1FwY40dE0uEx4ELqg/viewform', '_blank');
+    } else {
       navigate('/detail', { state: { courseData: course } });
     }
   };
@@ -179,7 +445,7 @@ const MainPage = () => {
           <button className="text-bc-white bg-transparent">
             <img src="assets/menu.svg" alt="menu" className="w-6 h-6" />
           </button>
-          <img src="assets/MainPageTopLogo.svg" alt="Un:Retired Logo" className="h-6" />
+          <img src="assets/MainPageTopLogo.png" alt="Un:Retired Logo" className="h-6" />
         </div>
         <button className="text-bc-white bg-transparent">
           <img src="assets/bell.svg" alt="notifications" className="w-6 h-6" />
@@ -188,7 +454,7 @@ const MainPage = () => {
 
       <div className="px-6 mt-4">
         <div className="relative">
-          <input 
+          <input
             type="text"
             placeholder="관심 분야, 강사명으로 검색하기"
             className="w-full h-12 bg-[#2C2C2C] rounded-lg pl-4 pr-12 text-bc-white placeholder:text-gray-500"
@@ -201,113 +467,46 @@ const MainPage = () => {
 
       <main className="px-6 mt-6">
         <h2 className="text-bc-white text-body-L font-bold mb-4">user님께 추천하는 강의</h2>
-        
-        <div className="relative mb-4">
-          <div 
-            className="overflow-hidden touch-pan-x"
-            onTouchStart={(e) => {
-              e.stopPropagation();
-              handleTouchStart(e, false);
-            }}
-            onTouchEnd={(e) => {
-              e.stopPropagation();
-              handleTouchEnd(e, false);
-            }}
-            onTouchMove={(e) => e.stopPropagation()}
-          >
-            <div 
-              className="flex gap-4 transition-transform duration-300 ease-in-out wider:min-h-[400px]"
-              style={{ 
-                transform: `translateX(-${currentIndex * (
-                  window.innerWidth >= 428 ? 72 : 
-                  window.innerWidth >= 410 ? 75 : 
-                  60
-                )}%)`
-              }}
-            >
-              {recommendedCourses.map((course, index) => (
-                <div 
-                  key={course.id} 
-                  className="min-w-[55%] min-h-[350] flex-shrink-0 wider:min-w-[67%] wider:min-h-[350px] relative"
-                  onClick={() => handleCourseClick(course)}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <div className={`absolute inset-0 z-10 transition-opacity duration-300 ${
-                    currentIndex === index ? 'opacity-0' : 'bg-black/50'
-                  }`} />
-                  <div className="flex items-center gap-2 mb-2">
-                    {course.isPreReservation ? (
-                      <>
-                        <img src="assets/AR_icon1.svg" alt="fire" className="w-4 h-4" />
-                        <span className="text-sm text-bc-orange-1">사전 예약 신청</span>
-                      </>
-                    ) : (
-                      <>
-                        <img src={course.icon} alt={course.category} className="w-6 h-6" />
-                        <span className="text-sm text-bc-white">{course.category}</span>
-                      </>
-                    )}
-                  </div>
-                  <div className="relative h-[250px] rounded-lg overflow-visible">
-                    {course.isPreReservation ? (
-                      <div className="w-[32%] h-[250px] bg-[#2C2C2C] rounded-lg p-4 flex flex-col justify-center wider:h-[350px]">
-                        <div className="text-center flex flex-col items-center">
-                            <button className="w-20 h-20 bg-transparent">
-                                <img src={course.icon} alt="subscribe" className="w-20 h-20" />
-                            </button>
-                          <h3 className="text-body-L font-bold mb-2 mt-4">{course.title}</h3>
-                          <p className="text-body-S text-gray-300">{course.description}</p>
-                        </div>
-                      </div>
-                    ) : (
-                      <>
-                        <img src={course.image} alt={course.title} className="w-full h-full wider:h-[350px] object-cover rounded-lg" />
-                      </>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
-        <h2 className="text-bc-white text-body-L font-bold mb-4">수강중인 강의</h2>
-        <div className="relative">
-          <div 
-            className="overflow-hidden touch-pan-x"
-            onTouchStart={(e) => handleTouchStart(e, true)}
-            onTouchEnd={(e) => handleTouchEnd(e, true)}
-          >
-            <div 
-              className="flex gap-4 transition-transform duration-300 ease-in-out"
-              style={{ transform: `translateX(-${currentIndexCurrent * 64}%)` }}
+        <div className="grid grid-cols-2 gap-4">
+          {recommendedCourses.map((course) => (
+            <div
+              key={course.id}
+              className="relative"
+              onClick={() => handleCourseClick(course)}
+              role="button"
+              tabIndex={0}
             >
-              {currentCourses.map((course) => (
-                <div key={course.id} className="min-w-[55%] flex-shrink-0 wider:min-w-[67%] wider:min-h-[60%] wider:mb-6">
-                  <div className="flex items-center gap-2 mb-2">
+              <div className="flex items-center gap-2 mb-2">
+                {course.isPreReservation ? (
+                  <>
+                    <img src="assets/AR_icon1.svg" alt="fire" className="w-4 h-4" />
+                    <span className="text-sm text-bc-orange-1">사전 예약 신청</span>
+                  </>
+                ) : (
+                  <>
                     <img src={course.icon} alt={course.category} className="w-6 h-6" />
                     <span className="text-sm text-bc-white">{course.category}</span>
+                  </>
+                )}
+              </div>
+              <div className="relative h-[210px] rounded-lg overflow-visible">
+                {course.isPreReservation ? (
+                  <div className="w-full h-full bg-[#2C2C2C] rounded-lg p-4 flex flex-col justify-center">
+                    <div className="text-center flex flex-col items-center">
+                      <button className="w-12 h-12 bg-transparent">
+                        <img src={course.icon} alt="subscribe" className="w-full h-full" />
+                      </button>
+                      <h3 className="text-body-S font-bold mb-1 mt-2">{course.title}</h3>
+                      <p className="text-xs text-gray-300 line-clamp-2">{course.description}</p>
+                    </div>
                   </div>
-                  <div className="relative h-[150px] rounded-lg overflow-hidden w-[100%] wider:w-full wider:h-[200px]">
-                    <img src={course.image} alt={course.title} className="w-auto h-auto object-cover wider:w-full wider:h-[100%]" />
-                  </div>
-                  <div className="mt-2">
-                    <span className="text-body-S text-bc-white">
-                      <span className="font-bold">
-                        {course.id === 1 ? "Ep.01" : "Ep.02"}
-                      </span>
-                      {" "}
-                      {course.id === 1 
-                        ? '"47년 호텔리어의 시작 이야기:..."'
-                        : '"직장 그리고 직업, 회사 밖은..."'
-                      }
-                    </span>
-                  </div>
-                </div>
-              ))}
+                ) : (
+                  <img src={course.image} alt={course.title} className="w-full h-full object-contain rounded-lg" />
+                )}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </main>
 

@@ -36,7 +36,7 @@ const AReservation = () => {
       {/* Header */}
       <div className="absolute top-0 left-0 w-full bg-transparent z-10">
         <header className="w-full h-[7vh] flex items-center px-4">
-          {/* <button 
+          <button 
             onClick={handleMainPage} 
             className="text-bc-white bg-transparent"
           >
@@ -45,7 +45,7 @@ const AReservation = () => {
               alt="arrow-left" 
               className="w-3 h-5"
             />
-          </button> */}
+          </button>
         </header>
       </div>
 
@@ -71,7 +71,7 @@ const AReservation = () => {
         <div className={`text-center ${isSmallHeight ? 'text-sm' : 'text-center'}`}>
           <p className={`font-bold text-title-XS`}>지금 사전예약하면</p>
           <div className='flex flex-row gap-2'>
-            <p className={`font-bold text-bc-orange-1 text-title-XS`}>콘텐츠 20% 할인 쿠폰 </p>
+            <p className={`font-bold text-bc-orange-1 text-title-XS`}>콘텐츠 무료수강 1회권 </p>
             <p className={`font-bold text-title-XS`}> 놓치지 마세요!</p>
           </div>
           <p className={`mt-2 font-bold text-bc-orange-1 text-title-XS`}>Beta 버전</p>

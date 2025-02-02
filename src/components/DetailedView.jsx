@@ -18,6 +18,23 @@ const DetailedView = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const headerOffset = 100; // 헤더 높이와 여유 공간
+
+      // 각 섹션의 위치 계산
+      const introPosition = introRef.current?.offsetTop - headerOffset;
+      const curriculumPosition = curriculumRef.current?.offsetTop - headerOffset;
+      const instructorPosition = instructorRef.current?.offsetTop - headerOffset;
+
+      // 스크롤 위치에 따라 활성 탭 설정
+      if (currentScrollY < curriculumPosition) {
+        setActiveTab('intro');
+      } else if (currentScrollY < instructorPosition) {
+        setActiveTab('curriculum');
+      } else {
+        setActiveTab('instructor');
+      }
+
+      // 기존 footer 표시 로직
       setIsFooterVisible(currentScrollY <= lastScrollY);
       setLastScrollY(currentScrollY);
     };
@@ -51,6 +68,10 @@ const DetailedView = () => {
 
   const handleCardClick = (index) => {
     setSelectedCard(selectedCard === index ? null : index);
+  };
+
+  const handlePreorderClick = () => {
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSdGW6-evzLYj5R-S860Rfxgd-LLNwRZV1FwY40dE0uEx4ELqg/viewform', '_blank');
   };
 
   if (!courseData) {
@@ -118,30 +139,43 @@ const DetailedView = () => {
 
         {/* 탭 네비게이션 */}
         <div className="sticky top-0 z-20 bg-bc-black border-b border-[#2C2C2C]">
-          <div className="flex justify-between px-6">
+          <div className="flex justify-between px-6 relative">
             <button
               onClick={() => handleTabClick('intro', introRef)}
-              className={`py-4 px-2 bg-transparent ${activeTab === 'intro' ? 'text-bc-white' : 'text-bc-grey-1'}`}
+              className={`py-4 px-2 bg-transparent relative ${
+                activeTab === 'intro' ? 'text-bc-white' : 'text-bc-grey-1'
+              }`}
             >
               강연소개
             </button>
             <button
               onClick={() => handleTabClick('curriculum', curriculumRef)}
-              className={`py-4 px-2 bg-transparent ${activeTab === 'curriculum' ? 'text-bc-white' : 'text-bc-grey-1'}`}
+              className={`py-4 px-2 bg-transparent relative ${
+                activeTab === 'curriculum' ? 'text-bc-white' : 'text-bc-grey-1'
+              }`}
             >
               커리큘럼
             </button>
             <button
               onClick={() => handleTabClick('instructor', instructorRef)}
-              className={`py-4 px-2 bg-transparent ${activeTab === 'instructor' ? 'text-bc-white' : 'text-bc-grey-1'}`}
+              className={`py-4 px-2 bg-transparent relative ${
+                activeTab === 'instructor' ? 'text-bc-white' : 'text-bc-grey-1'
+              }`}
             >
               강사소개
             </button>
+            <div
+              className="absolute bottom-0 h-1 bg-[#1E3A8A] transition-all duration-300 ease-in-out"
+              style={{
+                left: activeTab === 'intro' ? '0%' : activeTab === 'curriculum' ? '33.33%' : '66.66%',
+                width: '33.33%',
+              }}
+            />
           </div>
         </div>
 
         {/* 강연 소개 섹션 */}
-        <section ref={introRef} className="mb-8 mt-6">
+        <section ref={introRef} className="mb-12 mt-6">
           <p className='text-title-L font-bold mb-4 text-center'>강연 소개</p>
           <div className="grid grid-cols-2 gap-1 mb-6 mt-2">
             <div className="aspect-square w-full">
@@ -192,7 +226,7 @@ const DetailedView = () => {
         </section>
 
         {/* 커리큘럼 섹션 */}
-        <section ref={curriculumRef} className="mb-8">
+        <section ref={curriculumRef} className="mb-12 min-h-[650px]">
           <p className='text-title-L font-bold mb-4 text-center'>커리큘럼</p>
           <div className="space-y-3">
             {/* 프롤로그 */}
@@ -220,28 +254,39 @@ const DetailedView = () => {
 
             {/* Episode 리스트 */}
             <div className="space-y-4">
-              <p className="text-body-L text-bc-white">• Episode</p>
-              {courseData.curriculum.map((item, index) => (
-                <div key={index}>
-                  <div className='flex flex-row' onClick={() => handleCardClick(index)}>
-                    <div className='pr-4 flex-1'>
-                      <div className={`p-4 rounded-lg flex items-center justify-between max-h-16 transition-colors duration-300 ${selectedCard === index ? 'bg-[#1E3A8A]' : 'bg-[#2C2C2C]'
-                        }`}>
-                        <div>
-                          <p className={`text-body-S ${selectedCard === index ? 'text-bc-white' : 'text-bc-grey-1'}`}>"{item.description}"</p>
+              {courseData.curriculum.map((episode, episodeIndex) => (
+                <div key={episodeIndex}>
+                  <p className="text-body-L text-bc-white font-bold">• {episode.episode}</p>
+                  <p className="text-body-S text-bc-white font-bold mb-3 ml-3">{episode.episodeDescription}</p>
+                  <div className="space-y-3">
+                    {episode.chapters.map((chapter, chapterIndex) => (
+                      <div key={chapter.key}>
+                        <div className='flex flex-row' onClick={() => handleCardClick(chapter.key)}>
+                          <div className='pr-4 flex-1'>
+                            <div className={`p-4 rounded-lg flex items-center justify-between max-h-16 transition-colors duration-300 ${
+                              selectedCard === chapter.key ? 'bg-[#1E3A8A]' : 'bg-[#2C2C2C]'
+                            }`}>
+                              <div>
+                                <p className={`text-body-S ${
+                                  selectedCard === chapter.key ? 'text-bc-white' : 'text-bc-grey-1'
+                                }`}>{chapter.description}</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex flex-col items-start ml-2">
+                            <img src="assets/play.png" alt="재생" className="w-6 h-6" />
+                            <div className={`overflow-hidden transition-all duration-300 ${
+                              selectedCard === chapter.key ? 'h-12' : 'h-0'
+                            }`}>
+                              <p className='text-body-S text-bc-grey-1 mt-1'>미리</p>
+                              <p className='text-body-S text-bc-grey-1'>보기</p>
+                            </div>
+                          </div>
                         </div>
+                        <p className="text-body-S text-bc-grey-1 mr-2 text-right mt-0 mr-12">15:00</p>
                       </div>
-                    </div>
-                    <div className="flex flex-col items-start ml-2">
-                      <img src="assets/play.png" alt="재생" className="w-6 h-6" />
-                      <div className={`overflow-hidden transition-all duration-300 ${selectedCard === index ? 'h-12' : 'h-0'
-                        }`}>
-                        <p className='text-body-S text-bc-grey-1 mt-1'>미리</p>
-                        <p className='text-body-S text-bc-grey-1'>보기</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
-                  <p className="text-body-S text-bc-grey-1 mr-2 text-right mt-0 mr-12">30:00</p>
                 </div>
               ))}
             </div>
@@ -250,7 +295,7 @@ const DetailedView = () => {
         </section>
 
         {/* 강사 소개 섹션 */}
-        <section ref={instructorRef} className="mb-12">
+        <section ref={instructorRef} className="mb-48 ">
           <p className='text-title-L font-bold mb-4 text-center'>강사 소개</p>
           <div className="p-6 bg-transparent rounded-lg pb-0">
             <div className="flex flex-row items-center text-center mb-6">
@@ -319,7 +364,10 @@ const DetailedView = () => {
             <button className="px-6 py-2 bg-[#FF6B00] rounded-md text-bc-white w-32">
               구독하기
             </button>
-            <button className="px-6 py-2 bg-[#4867D6] rounded-md text-bc-white w-32">
+            <button 
+              className="px-6 py-2 bg-[#4867D6] rounded-md text-bc-white w-32"
+              onClick={handlePreorderClick}
+            >
               사전예약
             </button>
           </div>
