@@ -150,7 +150,7 @@ export const recommendedCourses = [
     ...categories["인문학 · 교양"],
     title: "20년 에티켓 마스터",
     description:
-      "우아한 매너로 빛나는 성공의 법칙: 20년 경력\n에티켓 마스터가 전하는 실천적 지혜",
+      "우아한 매너로 빛나는 성공의 법칙: 20년 경력 에티켓 마스터가 전하는 실천적 지혜",
     detailedImage: "assets/detailed_유니초이2.png",
     chaptertime: "챕터 6개 · 1시간 30분",
     instructor: {
