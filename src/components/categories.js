@@ -11,4 +11,8 @@ export const categories = {
     category: "공학 · 기술",
     icon: "assets/spinner.svg",
   },
+  "사전 예약하기": {
+    category: "사전 예약하기",
+    icon: "assets/search.svg",
+  },
 };

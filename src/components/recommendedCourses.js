@@ -4,7 +4,7 @@ export const recommendedCourses = [
   // 권문현
   {
     id: 1,
-    image: "assets/권문현.png",
+    image: "assets/권문현2.png",
     ...categories["인문학 · 교양"],
     title: "47년 호텔경력",
     description:
@@ -136,7 +136,7 @@ export const recommendedCourses = [
   // 유니초이
   {
     id: 3,
-    image: "assets/유니초이.png",
+    image: "assets/유니초이2.png",
     ...categories["인문학 · 교양"],
     title: "20년 에티켓 마스터",
     description:
@@ -219,7 +219,7 @@ export const recommendedCourses = [
   // 이현구
   {
     id: 4,
-    image: "assets/이현구.png",
+    image: "assets/이현구2.png",
     ...categories["공학 · 기술"],
     title: "30년 마케팅 전문가",
     description: "30년 마케팅 베테랑의 AI 활용 비법:\n데이터에서 혁신으로",
@@ -300,7 +300,7 @@ export const recommendedCourses = [
   // 이재원
   {
     id: 5,
-    image: "assets/이재원.png",
+    image: "assets/이재원2.png",
     ...categories["인사 · 교육"],
     title: "15년 문화산업 전문가",
     description:
@@ -384,10 +384,11 @@ export const recommendedCourses = [
   // 사전예약
   {
     id: 6,
+    ...categories["사전 예약하기"],
     isPreReservation: true,
     title: "사전 예약하고 가장 먼저 시청해 보세요!",
     description:
-      "AI활용 / 유아교육 / SDGS / 클래식 인문학 / 일과 세대에 이해하기 등의 콘텐츠가 추가될 예정입니다.",
-    icon: "assets/button_subscribe.svg",
+      "AI 활용 / 유아 교육 / SDGs / 클래식 인문학 / 알파 세대 이해하기 등의 콘텐츠가 추가될 예정입니다.",
+    iconButton: "assets/button_subscribe.svg",
   },
 ];

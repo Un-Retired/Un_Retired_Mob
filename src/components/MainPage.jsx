@@ -91,18 +91,18 @@ const MainPage = () => {
         </button>
       </header>
 
-      <div className='px-6 mt-4'>
+      <div className='px-6'>
         <div className='relative'>
           <input
             type='text'
             placeholder='관심 분야, 강사명으로 검색하기'
-            className='w-full h-12 bg-[#2C2C2C] rounded-lg pl-4 pr-12 text-bc-white placeholder:text-gray-500'
+            className='w-full bg-[#2C2C2C] rounded-lg px-[12px] py-[8px] text-bc-white placeholder:text-[#828282] placeholder:text-[12px]'
           />
           <button className='absolute right-4 top-1/2 transform -translate-y-1/2 bg-transparent'>
             <img
               src='assets/search.svg'
               alt='search'
-              className='w-5 h-5 bg-transparent'
+              className='w-4 h-4 bg-transparent'
             />
           </button>
         </div>
@@ -113,7 +113,7 @@ const MainPage = () => {
           사전 예약자님께 추천하는 강의
         </h2>
 
-        <div className='grid grid-cols-2 gap-4'>
+        <div className='grid grid-cols-2 gap-4 mb-8'>
           {recommendedCourses.map(course => (
             <div
               key={course.id}
@@ -121,48 +121,33 @@ const MainPage = () => {
               onClick={() => handleCourseClick(course)}
               role='button'
               tabIndex={0}>
-              <div className='flex items-center gap-2 mb-2'>
-                {course.isPreReservation ? (
-                  <>
-                    <img
-                      src='assets/AR_icon1.svg'
-                      alt='fire'
-                      className='w-4 h-4'
-                    />
-                    <span className='text-sm text-bc-orange-1'>
-                      사전 예약 신청
-                    </span>
-                  </>
-                ) : (
-                  <>
-                    <img
-                      src={course.icon}
-                      alt={course.category}
-                      className='w-6 h-6'
-                    />
-                    <span className='text-sm text-bc-white'>
-                      {course.category}
-                    </span>
-                  </>
-                )}
+              <div className={"flex items-center gap-[5px] mb-0"}>
+                <img
+                  src={course.icon}
+                  alt={course.category}
+                  className='w-6 h-6'
+                />
+                <span className='text-sm text-bc-white'>{course.category}</span>
               </div>
               <div className='relative h-[210px] rounded-lg overflow-visible'>
                 {course.isPreReservation ? (
-                  <div className='w-full h-full bg-[#2C2C2C] rounded-lg p-4 flex flex-col justify-center'>
-                    <div className='text-center flex flex-col items-center'>
+                  <div className='w-full h-full bg-[#2C2C2C] rounded-lg p-4 flex flex-col justify-stretch'>
+                    <div className='w-full h-full text-center flex flex-col items-center justify-between'>
                       <button className='w-12 h-12 bg-transparent'>
                         <img
-                          src={course.icon}
+                          src={course.iconButton}
                           alt='subscribe'
                           className='w-full h-full'
                         />
                       </button>
-                      <h3 className='text-body-S font-bold mb-1 mt-2'>
-                        {course.title}
-                      </h3>
-                      <p className='text-xs text-gray-300 line-clamp-2'>
-                        {course.description}
-                      </p>
+                      <div>
+                        <h3 className='text-[14px] text-left text-xs font-bold mb-[8px] mt-2'>
+                          {course.title}
+                        </h3>
+                        <p className='text-[9px] text-left text-gray-300 line-clamp-4'>
+                          {course.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ) : (
