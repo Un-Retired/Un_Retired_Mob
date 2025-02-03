@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
+import {IconButton} from "../components/ui/icon";
 
 const DetailedView = () => {
   const location = useLocation();
@@ -93,15 +94,13 @@ const DetailedView = () => {
           alt='강의 썸네일'
           className='w-full h-full object-cover'
         />
-        <button
+        <IconButton
+          name='prev'
+          alt='뒤로가기'
+          size={24}
+          className='absolute top-4 left-4 z-10 p-2 bg-transparent'
           onClick={handleBack}
-          className='absolute top-4 left-4 z-10 p-2 bg-transparent'>
-          <img
-            src='assets/LeftArrow.png'
-            alt='뒤로가기'
-            className='w-[12px] h-[18px]'
-          />
-        </button>
+        />
         <div className='absolute bottom-0 left-0 p-6 bg-gradient-to-t from-black to-transparent w-full'>
           <div className=''>
             <div className='flex flex-row items-start gap-2'>
@@ -317,7 +316,7 @@ const DetailedView = () => {
               </div>
               <div className='flex flex-col items-start ml-2'>
                 <img
-                  src='assets/play.png'
+                  src='assets/icons/play.svg'
                   alt='재생'
                   className='w-6 h-6'
                 />
@@ -371,7 +370,7 @@ const DetailedView = () => {
                           </div>
                           <div className='flex flex-col items-start ml-2'>
                             <img
-                              src='assets/play.png'
+                              src='assets/icons/play.svg'
                               alt='재생'
                               className='w-6 h-6'
                             />

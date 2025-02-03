@@ -1,58 +1,8 @@
-import React, {useState, useRef} from "react";
 import {useNavigate} from "react-router-dom";
-import {categories} from "./categories";
-import {recommendedCourses} from "./recommendedCourses";
+import {recommendedCourses} from "../data/recommendedCourses";
 
 const MainPage = () => {
   const navigate = useNavigate();
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentIndexCurrent, setCurrentIndexCurrent] = useState(0);
-  const [touchStart, setTouchStart] = useState(null);
-
-  const currentCourses = [
-    {
-      id: 1,
-      image: "assets/kwon2.svg",
-      ...categories["인사 · 교육"],
-    },
-    {
-      id: 2,
-      image: "assets/lee2.svg",
-      ...categories["인문학 · 교양"],
-    },
-  ];
-
-  const handleTouchStart = (e, isCurrentCourse = false) => {
-    const touch = e.touches[0];
-    setTouchStart({
-      x: touch.clientX,
-      y: touch.clientY,
-    });
-  };
-
-  const handleTouchEnd = (e, isCurrentCourse = false) => {
-    if (!touchStart) return;
-
-    const touch = e.changedTouches[0];
-    const deltaX = touchStart.x - touch.clientX;
-    const deltaY = touchStart.y - touch.clientY;
-
-    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
-      if (isCurrentCourse) {
-        if (deltaX > 0 && currentIndexCurrent < currentCourses.length - 1) {
-          setCurrentIndexCurrent(prev => prev + 1);
-        } else if (deltaX < 0 && currentIndexCurrent > 0) {
-          setCurrentIndexCurrent(prev => prev - 1);
-        }
-      } else {
-        if (deltaX > 0 && currentIndex < recommendedCourses.length - 1) {
-          setCurrentIndex(prev => prev + 1);
-        } else if (deltaX < 0 && currentIndex > 0) {
-          setCurrentIndex(prev => prev - 1);
-        }
-      }
-    }
-  };
 
   const handleCourseClick = course => {
     if (course.isPreReservation) {
