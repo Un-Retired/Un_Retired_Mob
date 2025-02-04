@@ -46,7 +46,7 @@ const MainPage = () => {
               </div>
               <div className="relative h-[210px] rounded-lg overflow-visible">
                 {course.isPreReservation ? (
-                  <div className="w-full h-[183px] mt-[14px] bg-[#2C2C2C] rounded-lg p-4 flex flex-col justify-stretch">
+                  <div className="w-full h-[187px] mt-[10px] bg-[#2C2C2C] rounded-lg p-4 flex flex-col justify-stretch">
                     <div className="w-full h-full text-center flex flex-col items-center justify-between">
                       <button className="w-[36px] h-[36px] mt-[8px] bg-transparent">
                         <img
