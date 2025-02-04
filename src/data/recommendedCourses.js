@@ -1,6 +1,16 @@
-import {categories} from "./categories";
+import { categories } from "./categories";
 
 export const recommendedCourses = [
+  // 사전예약
+  {
+    id: 6,
+    ...categories["사전 예약하기"],
+    isPreReservation: true,
+    title: "사전 예약하고 가장 먼저 시청해 보세요!",
+    description:
+      "AI 활용 / 유아 교육 / SDGs / 클래식 인문학 / 알파 세대 이해하기 등의 콘텐츠가 추가될 예정입니다.",
+    iconButton: "assets/button_subscribe.svg",
+  },
   // 권문현
   {
     id: 1,
@@ -246,13 +256,14 @@ export const recommendedCourses = [
     instructor: {
       name: "이현구",
       role: "AI 마케팅 전문가",
+      role2: "AI 마케팅 전문가",
       profile: "assets/avatar_이현구.png",
     },
     introduction:
       "안녕하세요.이현구입니다.\n저는 AI를 활용한 비지니스 혁신과 데이터 분석을 중심으로 강의와 컨설팅을 진행하고 있습니다.삼성전자와 삼성자동차에서 전략 기획 경험을 바탕으로 현재 AI융합비지니스포럼 회장으로서 AI를 통해 더 스마트한 미래를 설계할 수 있도록 돕는 데 집중하고 있습니다.",
     curriculum: [
       {
-        episode: "Episode1",
+        episode: "Episode 1",
         episodeDescription: "AI마케팅 전략-생성형 AI부터 데이터 활용까지",
         chapters: [
           {
@@ -276,7 +287,7 @@ export const recommendedCourses = [
         ],
       },
       {
-        episode: "Episode2",
+        episode: "Episode 2",
         episodeDescription: "AI소셜미디어 마케팅-데이터 분석과 전략 수립",
         chapters: [
           {
@@ -341,7 +352,7 @@ export const recommendedCourses = [
       "안녕하세요.이재원입니다.\n저는 미디어와 세대 간 소통을 연구하는 성균관대학교 초빙교수이자 한양대학교 겸임교수입니다. 전 텐아시아 편집장,스포츠한국 부장으로 미디어 산업을 분석해왔으며 현재는 Z세대•알파세대(잘파 세대)와의 소통 방식과 문화 변화를 연구하고 있습니다.",
     curriculum: [
       {
-        episode: "Episode1",
+        episode: "Episode 1",
         episodeDescription: "잘파 세대,그들은 누구인가?",
         chapters: [
           {
@@ -365,7 +376,7 @@ export const recommendedCourses = [
         ],
       },
       {
-        episode: "Episode2",
+        episode: "Episode 2",
         episodeDescription: "잘파세대와 소통하는 법",
         chapters: [
           {
@@ -412,15 +423,5 @@ export const recommendedCourses = [
       "• KBS<한민족 하나로>,SBS<열린TV 시청자세상>고정 출연",
     ],
     isOnline: true,
-  },
-  // 사전예약
-  {
-    id: 6,
-    ...categories["사전 예약하기"],
-    isPreReservation: true,
-    title: "사전 예약하고 가장 먼저 시청해 보세요!",
-    description:
-      "AI 활용 / 유아 교육 / SDGs / 클래식 인문학 / 알파 세대 이해하기 등의 콘텐츠가 추가될 예정입니다.",
-    iconButton: "assets/button_subscribe.svg",
   },
 ];
