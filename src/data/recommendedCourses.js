@@ -14,9 +14,11 @@ export const recommendedCourses = [
   // 권문현
   {
     id: 1,
-    image: "assets/권문현2.png",
+    image: "assets/images/권문현.png",
     ...categories["인문학 · 교양"],
     title: "47년 호텔경력",
+    introDesc:
+      "웨스턴 조선 호텔,\n권문현 지배인이 들려주는\n호텔서비스의 모든 것.",
     description:
       "웨스턴 조선 호텔,\n권문현 지배인이 들려주는 호텔서비스의\n 모든 것.",
     detailedImage: "assets/detailed_kwon2.png",
@@ -71,9 +73,11 @@ export const recommendedCourses = [
   // 이기훈
   {
     id: 2,
-    image: "assets/이기훈2.png",
+    image: "assets/images/이기훈.png",
     ...categories["인사 · 교육"],
     title: "25년 은퇴설계",
+    introDesc:
+      "은퇴설계 25년 경력의\n베테랑 이기훈 강사의 직장이 아닌 직업 만드는 법",
     description:
       "은퇴설계 25년 경력의 베테랑,\n이기훈 강사가 들려주는 직장이 아닌 직업\n만드는 법 - 시즌 1",
     detailedImage: "assets/detailed_lee2.png",
@@ -156,9 +160,11 @@ export const recommendedCourses = [
   // 유니초이
   {
     id: 3,
-    image: "assets/유니초이2.png",
+    image: "assets/images/유니초이.png",
     ...categories["인문학 · 교양"],
     title: "20년 에티켓 마스터",
+    introDesc:
+      "우아한 매너로 빛나는 성공의 법칙: 20년\n경력의 에티켓\n마스터가 전하는 실천적 지혜",
     description:
       "우아한 매너로 빛나는 성공의 법칙: 20년 경력 에티켓 마스터가 전하는 실천적 지혜",
     detailedImage: "assets/detailed_유니초이2.png",
@@ -247,9 +253,10 @@ export const recommendedCourses = [
   // 이현구
   {
     id: 4,
-    image: "assets/이현구2.png",
+    image: "assets/images/이현구.png",
     ...categories["공학 · 기술"],
     title: "30년 마케팅 전문가",
+    introDesc: "30년 마케팅 베테랑의\nAI 활용 비법: 데이터에서\n혁신으로.",
     description: "30년 마케팅 베테랑의 AI 활용 비법:\n데이터에서 혁신으로",
     detailedImage: "assets/detailed_이현구2.png",
     chaptertime: "챕터 5개 · 1시간 15분",
@@ -335,9 +342,11 @@ export const recommendedCourses = [
   // 이재원
   {
     id: 5,
-    image: "assets/이재원2.png",
+    image: "assets/images/이재원.png",
     ...categories["인사 · 교육"],
     title: "15년 문화산업 전문가",
+    introDesc:
+      "15년 경력 미디어 • 문화산업 전문가가 전\n하는 세대 간\n소통의 실질적인 패러다임",
     description:
       "15년 경력 미디어,문화산업 전문가가 전하는\n세대 간 소통의 실질적인 패러다임",
     detailedImage: "assets/detailed_이재원2.png",

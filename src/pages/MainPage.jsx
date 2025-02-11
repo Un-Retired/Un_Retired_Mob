@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { recommendedCourses } from "../data/recommendedCourses";
 import { Footer } from "@/components/ui/footer";
@@ -9,75 +10,169 @@ const MainPage = () => {
 
   const handleCourseClick = (course) => {
     if (course.isPreReservation) {
-      window.open(
-        "https://docs.google.com/forms/d/e/1FAIpQLSdGW6-evzLYj5R-S860Rfxgd-LLNwRZV1FwY40dE0uEx4ELqg/viewform",
-        "_blank"
-      );
+      window.open("https://forms.gle/xtHWL2ZxsMBFs7vXA", "_blank");
     } else {
       navigate("/detail", { state: { courseData: course } });
     }
   };
 
-  return (
-    <div className="w-auto h-auto bg-bc-black text-bc-white overflow-hidden pb-[60px] relative min-h-screen">
-      <Header />
-      <Search />
-      <main className="px-6 mt-6">
-        <h2 className="text-bc-white text-body-L font-bold mb-4">
-          사전 예약자님께 추천하는 강의
-        </h2>
+  let dueDate = new Date("2025-02-13T12:00:00");
 
-        <div className="grid grid-cols-2 gap-4 mb-8">
-          {recommendedCourses.map((course) => (
-            <div
-              key={course.id}
-              className="relative"
-              onClick={() => handleCourseClick(course)}
-              role="button"
-              tabIndex={0}
-            >
-              <div className={"flex items-center gap-[5px] mb-0"}>
-                <img
-                  src={course.icon}
-                  alt={course.category}
-                  className="w-6 h-6"
-                />
-                <span className="text-sm text-bc-white">{course.category}</span>
-              </div>
-              <div className="relative h-[210px] rounded-lg overflow-visible">
-                {course.isPreReservation ? (
-                  <div className="w-full h-[187px] mt-[10px] bg-[#2C2C2C] rounded-lg p-4 flex flex-col justify-stretch">
-                    <div className="w-full h-full text-center flex flex-col items-center justify-between">
-                      <button className="w-[36px] h-[36px] mt-[8px] bg-transparent">
-                        <img
-                          src={course.iconButton}
-                          alt="subscribe"
-                          className="w-full h-full"
-                        />
-                      </button>
-                      <div>
-                        <h3 className="text-[14px] text-left text-xs font-bold mb-[8px] mt-2">
-                          {course.title}
-                        </h3>
-                        <p className="text-[9px] text-left text-gray-300 line-clamp-4">
-                          {course.description}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <img
-                    src={course.image}
-                    alt={course.title}
-                    className="w-full h-full object-contain rounded-lg"
-                  />
-                )}
+  // 1차 사전예약 당 3일식 계산
+  const nowTime = () => {
+    // 1차 모집일 : 25.02.14 12:00
+    let now = new Date();
+    let diff = dueDate - now;
+    let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+      .toString()
+      .padStart(2, "0");
+    let seconds = Math.floor((diff % (1000 * 60)) / 1000)
+      .toString()
+      .padStart(2, "0");
+
+    return `${hours} : ${minutes} : ${seconds}`;
+  };
+
+  function updateDaysLeft() {
+    let now = new Date();
+
+    // 두 날짜의 차이를 밀리초 단위로 계산
+    let diff = dueDate - now;
+
+    // 남은 일 수 계산 (1일 = 1000ms * 60s * 60m * 24h)
+    let days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+    return `${days}`;
+  }
+
+  // 1초마다 업데이트
+
+  const [clock, setclock] = useState(nowTime);
+  const [diffday, setDiffDay] = useState(updateDaysLeft);
+
+  setInterval(() => setclock(nowTime), 1000);
+  setInterval(() => setDiffDay(updateDaysLeft), 1000);
+
+  return (
+    <div className="w-auto h-auto flex flex-row justify-center bg-bc-black overflow-hidden relative min-h-screen">
+      <div className="flex flex-col max-w-[480px] w-full min-w-0 grow-0">
+        <Header />
+        <div className="flex flex-col gap-[12px] w-full">
+          <Search />
+          <div className="h-[120px] w-full bg-red flex flex-row justify-center items-center bg-[#242323]">
+            <div className="w-full h-full max-w-[375px] flex flex-row ">
+              <img
+                src="assets/images/content_prereservation.png"
+                alt="콘텐츠 사전예약"
+                className="h-full w-[110px]"
+              />
+              <div className="w-full flex-grow-1 flex flex-col gap-2 justify-center">
+                <div className="justify-center items-center flex flex-col">
+                  <span className="text-[20px] font-bold justify-center leading-[1.5] tracking-[-0.6px]">
+                    지금 <span className="text-[#F6922E]">사전예약</span>하고
+                    <br />
+                    <span className="text-[#F6922E]">1회 무료수강 쿠폰</span>을
+                    받아가세요!
+                  </span>
+                </div>
+                <div className="w-full h-[20px] flex flex-row justify-center">
+                  <span className="flex text-[16px] leading-[1.5] tracking-[-0.6px] text-[#F8F8F8] px-[8px] text-center align-text-center font-bold bg-[#FF4545] justify-center items-center">
+                    1차 모집 D-{diffday}
+                  </span>
+                  <span className="inline-block text-[16px] leading-[1.5] tracking-[-0.6px] font-bold text-black bg-[#F8F8F8] justify-center items-center flex px-[12px]">
+                    {clock}
+                  </span>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
+          <main className="">
+            <span className="flex text-[#F8F8F8] text-[20px] font-bold leading-[1.5] tracking-[-0.6px] my-[12px] mx-[16px]">
+              사전 예약자님께 추천하는 강의
+            </span>
+            <div className="grid grid-cols-2 gap-x-[20px] gap-y-[8px] mx-[16px]">
+              {recommendedCourses.map((course) => (
+                <div
+                  key={course.id}
+                  className="flex flex-col w-full cursor-pointer"
+                  onClick={() => handleCourseClick(course)}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <div className={"flex flex-row items-center gap-[5px]"}>
+                    <img
+                      src={course.icon}
+                      alt={course.category}
+                      className="w-[24px] h-[24px]"
+                    />
+                    <span className="text-[14px] leading-[1.5] tracking-[-0.6px] text-[#F8F8F8] font-normal">
+                      {course.category}
+                    </span>
+                  </div>
+                  {course.isPreReservation ? (
+                    <>
+                      <div className="w-full bg-cover bg-center bg-no-repeat rounded-[10px] flex flex-col justify-end">
+                        <div className="w-full h-full text-center flex flex-col gap-[9.5px] items-center justify-between">
+                          <img
+                            src="assets/images/content_price.png"
+                            alt="subscribe"
+                            className="w-full h-[112px] rounded-t-lg"
+                          />
+                          <div className="w-full flex flex-col gap-[4px]">
+                            <span className="text-[20px] text-center font-bold flex flex-col gap-[4px] mb-[5.5px]">
+                              <span>
+                                선착순! 1회 무료
+                                <br />
+                                수강권 증정
+                                <br />
+                              </span>
+                              <span className="flex flex-row justify-center items-center text-[16px] gap-[4px]">
+                                신청하기
+                                <img
+                                  src="assets/icons/arrow_right.svg"
+                                  alt=""
+                                  className="w-[16px] h-[16px] bg-transparent"
+                                />
+                              </span>
+                            </span>
+                            <p className="flex w-full h-[37px] text-[14px] font-bold justify-center items-center text-[#F8F8F8] bg-[#E87D12] rounded-b-[10px] gap-[4px]">
+                              <span className="text-[#4059F7]">
+                                D-{diffday}
+                              </span>
+                              <span>{clock}</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div
+                        className={`w-full h-[256px] bg-cover bg-center bg-no-repeat rounded-[10px] flex flex-col justify-end p-[16px]`}
+                        style={{ backgroundImage: `url('/${course.image}')` }}
+                      >
+                        <span className="text-[20px] font-bold leading-[1.5] tracking-[-0.6px] text-[#F8F8F8]">
+                          {course.title}
+                        </span>
+                        <span className="text-[12px] font-normal leading-[1.5] tracking-[-0.6px] text-[#F8F8F8] overflow-auto whitespace-pre-wrap">
+                          {course.introDesc.split("\n").map((line, index) => (
+                            <span key={index}>
+                              {line}
+                              <br />
+                            </span>
+                          ))}
+                        </span>
+                      </div>
+                    </>
+                  )}
+                </div>
+              ))}
+            </div>
+          </main>
         </div>
-      </main>
-
+        <div className="w-full h-[200px]"></div>
+      </div>
       <Footer />
     </div>
   );
