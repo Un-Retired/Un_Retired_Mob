@@ -16,11 +16,32 @@ const MainPage = () => {
     }
   };
 
-  let dueDate = new Date("2025-02-13T12:00:00");
+  let dueDate = new Date("2025-02-16T12:00:00");
+  let step = 0;
+  // 2차 사전예약 당 3일식 계산
 
-  // 1차 사전예약 당 3일식 계산
+  let dueDateList = [
+    new Date("2025-02-10T12:00:00"),
+    new Date("2025-02-13T12:00:00"),
+    new Date("2025-02-16T12:00:00"),
+    new Date("2025-02-19T12:00:00"),
+    new Date("2025-02-22T12:00:00"),
+    new Date("2025-02-25T12:00:00"),
+    new Date("2025-02-28T12:00:00"),
+    new Date("2025-03-01T12:00:00"),
+  ];
+  // dueDate를 오늘 기준에서 가장 가까운 오는날로 지정
+  for (let i = 0; i < dueDateList.length; i++) {
+    if (dueDateList[i] > new Date()) {
+      dueDate = dueDateList[i];
+      step = i + 1;
+      break;
+    }
+  }
+
+  // 2차 사전예약 당 3일식 계산
   const nowTime = () => {
-    // 1차 모집일 : 25.02.14 12:00
+    // 2차 모집일 : 25.02.14 12:00
     let now = new Date();
     let diff = dueDate - now;
     let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -63,7 +84,7 @@ const MainPage = () => {
           <div className="h-[120px] w-full bg-red flex flex-row justify-center items-center bg-[#242323]">
             <div className="w-full h-full max-w-[375px] flex flex-row ">
               <img
-                src="assets/images/content_prereservation.png"
+                src="assets/images/content_prereservation2.png"
                 alt="콘텐츠 사전예약"
                 className="h-full w-[110px]"
               />
@@ -78,7 +99,7 @@ const MainPage = () => {
                 </div>
                 <div className="w-full h-[20px] flex flex-row justify-center">
                   <span className="flex text-[16px] leading-[1.5] tracking-[-0.6px] text-[#F8F8F8] px-[8px] text-center align-text-center font-bold bg-[#FF4545] justify-center items-center">
-                    1차 모집 D-{diffday}
+                    {step - 1}차 모집 D-{diffday}
                   </span>
                   <span className="inline-block text-[16px] leading-[1.5] tracking-[-0.6px] font-bold text-black bg-[#F8F8F8] justify-center items-center flex px-[12px]">
                     {clock}
@@ -171,7 +192,7 @@ const MainPage = () => {
             </div>
           </main>
         </div>
-        <div className="w-full h-[200px]"></div>
+        <div className="w-full h-[84px]"></div>
       </div>
       <Footer />
     </div>

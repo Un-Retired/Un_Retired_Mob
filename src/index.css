@@ -136,3 +136,9 @@ body {
   margin: 0;
   padding: 0;
 }
+
+@layer base {
+  .text-body-S {
+    @apply leading-[1.5] tracking-[-0.6px];
+  }
+}
