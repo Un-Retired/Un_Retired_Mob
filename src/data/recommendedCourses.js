@@ -75,11 +75,11 @@ export const recommendedCourses = [
     id: 2,
     image: "assets/images/이기훈.png",
     ...categories["인사 · 교육"],
-    title: "25년 은퇴설계",
+    title: "30년 은퇴설계",
     introDesc:
-      "은퇴설계 25년 경력의\n베테랑 이기훈 강사의 직장이 아닌 직업 만드는 법",
+      "은퇴설계 30년 경력의\n베테랑 이기훈 강사의 직장이 아닌 직업 만드는 법",
     description:
-      "은퇴설계 25년 경력의 베테랑,\n이기훈 강사가 들려주는 직장이 아닌 직업\n만드는 법 - 시즌 1",
+      "은퇴설계 30년 경력의 베테랑,\n이기훈 강사가 들려주는 직장이 아닌 직업\n만드는 법 - 시즌 1",
     detailedImage: "assets/detailed_lee2.png",
     chaptertime: "챕터 5개 · 1시간 15분",
     instructor: {
@@ -89,7 +89,7 @@ export const recommendedCourses = [
       profile: "assets/avatar_lee2.png",
     },
     introduction:
-      "안녕하세요. 경영 컨설팅 전문가 이기훈입니다.\n25년 간 약 1000개의 기업을 대상으로 자기경영, 셀프리더십, 경력관리(CDP), 은퇴· 퇴직 설계, 리더십 등 강의 및 경영 컨설팅을 수행해왔습니다. 25년 노하우를 기반으로 은퇴를 앞둔 사람들에게 어떤 것을 준비해야 하는지 전달하려합니다.",
+      "안녕하세요. 경영 컨설팅 전문가 이기훈입니다.\n30년 간 약 1000개의 기업을 대상으로 자기경영, 셀프리더십, 경력관리(CDP), 은퇴· 퇴직 설계, 리더십 등 강의 및 경영 컨설팅을 수행해왔습니다. 30년 노하우를 기반으로 은퇴를 앞둔 사람들에게 어떤 것을 준비해야 하는지 전달하려합니다.",
     curriculum: [
       {
         episode: "Episode 1",
