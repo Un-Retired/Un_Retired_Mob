@@ -166,7 +166,7 @@ export const recommendedCourses = [
     introDesc:
       "37년 유아교육 경력 영어유치원 원장 출신이 전하는 우리 아이 영어유치원 선택 필살 전략",
     description:
-      "강남 • 서초 영어유치원 설립자, 원장이 전하는 35년 경력의 우리 아이 영어유치원 선택 필살 전략",
+      "강남 • 서초 영어유치원 설립자, 원장이 전하는 37년 경력의 우리 아이 영어유치원 선택 필살 전략",
     detailedImage: "assets/images/김태연.png",
     chaptertime: "챕터 6개 · 1시간 30분",
     instructor: {
