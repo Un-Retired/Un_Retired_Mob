@@ -5,6 +5,13 @@ const SubDomain = () => {
   const [clock, setClock] = useState("");
   const [daysRemaining, setDaysRemaining] = useState(0);
 
+  const handleClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/17a0d_7dhW-LWxC5ho7SzoMXfLDqIp9LPHgrPVj5vrzg/edit",
+      "_blank"
+    );
+  };
+
   useEffect(() => {
     const updateClock = () => {
       const now = new Date();
@@ -32,28 +39,36 @@ const SubDomain = () => {
 
     return () => clearInterval(interval);
   }, [dueDate]);
-
+  // md 768px
   return (
     <>
-      <img className="m-auto" src="assets/subDomain.svg" alt="Subdomain Icon" />
-      <footer className="flex items-center justify-center h-[100px] bg-bc-orange-2 sticky bottom-0">
-        <div className="flex items-center justify-center gap-[40px]">
-          <div className="flex flex-col justify-start">
-            <span className="fontSize-title-S leading-[1.5] font-bold">
-              [ 마감임박!! ] 지금 바로 실리콘밸리 20년 차 디자이너의 웨비나
-              신청해보세요!
-            </span>
-            <div className="w-full h-[30px] flex flex-row">
-              <span className="flex text-[16px] leading-[1.5] tracking-[-0.6px] text-[#F8F8F8] px-[8px] text-center align-text-center font-bold bg-[#FF4545] justify-center items-center">
+      <img
+        className="m-auto md:hidden flex"
+        src="assets/mobile.jpg"
+        alt="Subdomain Icon"
+      />
+      <img
+        className="m-auto md:flex hidden max-w-[1440px]"
+        src="assets/web.jpg"
+        alt="Subdomain Icon"
+      />
+      <footer className="w-full sticky bottom-0 flex items-center justify-center md:justify-end bg-bc-orange-2 p-[10px] md:px-[120px]">
+        <div className="flex items-center justify-center gap-[8px] md:gap-[24px]">
+          <div className="flex flex-col justify-start gap-[10px]">
+            <div className="w-full flex flex-row">
+              <span className="flex text-[14px] leading-[1.5] tracking-[-0.6px] text-[#F8F8F8] p-[8px] text-center align-text-center font-bold bg-[#FF4545] justify-center items-center md:text-[20px] md:px-[12px] md:py-[8px] md:w-[150px]">
                 웨비나 모집 D-{daysRemaining}
               </span>
-              <span className="inline-block text-[16px] leading-[1.5] tracking-[-0.6px] font-bold text-black bg-[#F8F8F8] justify-center items-center flex px-[12px]">
+              <span className="inline-block text-[14px] leading-[1.5] tracking-[-0.6px] font-bold text-black bg-[#F8F8F8] justify-center items-center flex p-[8px] md:text-[20px] md:px-[12px] md:py-[8px] md:w-[132px]">
                 {clock}
               </span>
             </div>
           </div>
 
-          <button className="bg-bc-blue w-[340px] h-[50px] rounded-[10px] text-title-XS leading-[1.5] font-bold">
+          <button
+            className="bg-bc-blue min-w-[173px] md:px-[160px] h-[50px] rounded-[10px] text-[16px] text-title-XS leading-[1.5] font-bold"
+            onClick={handleClick}
+          >
             지금 바로 신청하기
           </button>
         </div>
