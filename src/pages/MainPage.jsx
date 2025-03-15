@@ -16,28 +16,28 @@ const MainPage = () => {
     }
   };
 
-  let dueDate = new Date("2025-02-16T12:00:00");
-  let step = 0;
+  let dueDate = new Date("2025-03-15T12:00:00");
+  let step = 3;
   // 2차 사전예약 당 3일식 계산
 
-  let dueDateList = [
-    new Date("2025-02-10T12:00:00"),
-    new Date("2025-02-13T12:00:00"),
-    new Date("2025-02-16T12:00:00"),
-    new Date("2025-02-19T12:00:00"),
-    new Date("2025-02-22T12:00:00"),
-    new Date("2025-02-25T12:00:00"),
-    new Date("2025-02-28T12:00:00"),
-    new Date("2025-03-01T12:00:00"),
-  ];
-  // dueDate를 오늘 기준에서 가장 가까운 오는날로 지정
-  for (let i = 0; i < dueDateList.length; i++) {
-    if (dueDateList[i] > new Date()) {
-      dueDate = dueDateList[i];
-      step = i + 1;
-      break;
-    }
-  }
+  // let dueDateList = [
+  //   new Date("2025-02-10T12:00:00"),
+  //   new Date("2025-02-13T12:00:00"),
+  //   new Date("2025-02-16T12:00:00"),
+  //   new Date("2025-02-19T12:00:00"),
+  //   new Date("2025-02-22T12:00:00"),
+  //   new Date("2025-02-25T12:00:00"),
+  //   new Date("2025-02-28T12:00:00"),
+  //   new Date("2025-03-01T12:00:00"),
+  // ];
+  // // dueDate를 오늘 기준에서 가장 가까운 오는날로 지정
+  // for (let i = 0; i < dueDateList.length; i++) {
+  //   if (dueDateList[i] > new Date()) {
+  //     dueDate = dueDateList[i];
+  //     step = i + 1;
+  //     break;
+  //   }
+  // }
 
   // 2차 사전예약 당 3일식 계산
   const nowTime = () => {

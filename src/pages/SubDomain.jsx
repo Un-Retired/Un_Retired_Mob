@@ -6,10 +6,7 @@ const SubDomain = () => {
   const [daysRemaining, setDaysRemaining] = useState(0);
 
   const handleClick = () => {
-    window.open(
-      "https://docs.google.com/forms/d/17a0d_7dhW-LWxC5ho7SzoMXfLDqIp9LPHgrPVj5vrzg/edit",
-      "_blank"
-    );
+    window.open("https://forms.gle/yDJFWwTgUJxBNEgn9", "_blank");
   };
 
   useEffect(() => {
@@ -44,12 +41,12 @@ const SubDomain = () => {
     <>
       <img
         className="m-auto md:hidden flex"
-        src="assets/mobile.jpg"
+        src="assets/mobile3.png"
         alt="Subdomain Icon"
       />
       <img
         className="m-auto md:flex hidden max-w-[1440px]"
-        src="assets/web.jpg"
+        src="assets/web3.png"
         alt="Subdomain Icon"
       />
       <footer className="w-full sticky bottom-0 flex items-center justify-center md:justify-end bg-bc-orange-2 p-[10px] md:px-[120px]">
