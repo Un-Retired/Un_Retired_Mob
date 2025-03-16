@@ -7,6 +7,7 @@ import PrivacyTermsPage from "./pages/terms/PrivacyTermsPage";
 import ServiceAlarmTermsPage from "./pages/terms/ServiceAlarmTermsPage";
 import Over14AgePrivacyTermsPage from "./pages/terms/Over14AgePrivacyTermsPage";
 import UsageTermsPage from "./pages/terms/UsageTermsPage";
+import SetDueDate from "./pages/SetDueDate";
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           element={<Over14AgePrivacyTermsPage />}
         />
         <Route path="/usage-terms" element={<UsageTermsPage />} />
+
+        {/* 차수와 마감일 지정 페이지 */}
+        <Route path="/private/setVariables" element={<SetDueDate />} />
       </Routes>
     </Router>
   );

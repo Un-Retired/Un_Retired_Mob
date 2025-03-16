@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { recommendedCourses } from "../data/recommendedCourses";
 import { Footer } from "@/components/ui/footer";
 import { Header } from "@/components/ui/header";
 import { Search } from "@/components/ui/search";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "@/firebase";
 
 const MainPage = () => {
   const navigate = useNavigate();
+  const [step, setStep] = useState(0);
+  const [dueDate, setDueDate] = useState("2025-01-01T12:00:00");
 
   const handleCourseClick = (course) => {
     if (course.isPreReservation) {
@@ -16,8 +20,23 @@ const MainPage = () => {
     }
   };
 
-  let dueDate = new Date("2025-03-31T12:00:00");
-  let step = 4;
+  useEffect(() => {
+    const getGlobalVariables = async () => {
+      const docRef = doc(db, "global", "globalVariables");
+      try {
+        const doc = await getDoc(docRef);
+        const data = doc.data();
+        setStep(data.step);
+        setDueDate(new Date(data.dueDate));
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getGlobalVariables();
+  }, []);
+
+  // let dueDate = new Date("2025-03-31T12:00:00");
+  // let step = 4;
   // 2차 사전예약 당 3일식 계산
 
   // let dueDateList = [

@@ -1,20 +1,28 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "@/*": ["./src/*"]
-      }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
     },
-    "typeAcquisition": {
-      "include": [
-        "@babel/core",
-        "@babel/generator",
-        "@babel/template",
-        "@babel/traverse",
-        "cookie",
-        "estree",
-        "json-schema"
-      ]
-    }
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "strict": true,
+    "allowJs": true,
+    "jsx": "react-jsx",
+    "skipLibCheck": true
+  },
+  "typeAcquisition": {
+    "include": [
+      "@babel/core",
+      "@babel/generator",
+      "@babel/template",
+      "@babel/traverse",
+      "cookie",
+      "estree",
+      "json-schema"
+    ]
+  }
 }
-  
