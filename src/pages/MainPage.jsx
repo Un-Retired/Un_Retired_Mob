@@ -16,8 +16,8 @@ const MainPage = () => {
     }
   };
 
-  let dueDate = new Date("2025-03-15T12:00:00");
-  let step = 3;
+  let dueDate = new Date("2025-03-31T12:00:00");
+  let step = 4;
   // 2차 사전예약 당 3일식 계산
 
   // let dueDateList = [
